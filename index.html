@@ -126,13 +126,14 @@
 var REPO = 'Taurex-Dealing/shift-schedule';
 var FILE_PATH = 'data.json';
 var BRANCH = 'master';
+var RAW_URL = 'https://raw.githubusercontent.com/' + REPO + '/' + BRANCH + '/' + FILE_PATH;
 var API_BASE = 'https://api.github.com/repos/' + REPO + '/contents/' + FILE_PATH;
 
 function getPAT() {
   var pat = localStorage.getItem('schedule_pat');
   if (!pat) {
-    pat = prompt('Enter the schedule access token (you only need to do this once):');
-    if (pat) localStorage.setItem('schedule_pat', pat.trim());
+    pat = prompt('Enter the schedule edit token to save changes.\nAsk your manager for the token.\n(You only need to do this once per device):');
+    if (pat) { pat = pat.trim(); localStorage.setItem('schedule_pat', pat); }
   }
   return pat;
 }
@@ -158,7 +159,6 @@ function normalizeData(data) {
 var scheduleData = null;
 var currentMonth = 'Mar26';
 var editTarget = null;
-var currentSHA = null;
 
 var SHIFT_TYPES = [
   { key: 'Morning Shift', label: 'Morning', cls: 'shift-morning', short: 'AM' },
@@ -221,10 +221,29 @@ function switchMonth(m) {
 }
 
 function loadData() {
-  var pat = getPAT();
-  if (!pat) { setStatus('error', 'No access token. Refresh the page to enter it.'); return; }
   setStatus('loading', 'Loading schedule...');
-  fetch(API_BASE + '?ref=' + BRANCH + '&t=' + Date.now(), {
+  fetch(RAW_URL + '?t=' + Date.now())
+  .then(function(r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
+  .then(function(data) {
+    scheduleData = normalizeData(data);
+    setStatus('saved', 'Schedule loaded. Last refreshed: ' + new Date().toLocaleTimeString());
+    render();
+  })
+  .catch(function(err) {
+    console.error('Load error:', err);
+    setStatus('error', 'Failed to load: ' + err.message + '. Try Refresh.');
+  });
+}
+
+function saveData() {
+  var pat = getPAT();
+  if (!pat) { setStatus('error', 'Edit cancelled - no token provided.'); return; }
+  setStatus('saving', 'Saving changes...');
+  // Step 1: get the current SHA
+  fetch(API_BASE + '?ref=' + BRANCH, {
     headers: {
       'Authorization': 'token ' + pat,
       'Accept': 'application/vnd.github.v3+json'
@@ -233,51 +252,29 @@ function loadData() {
   .then(function(r) {
     if (r.status === 401 || r.status === 403) {
       localStorage.removeItem('schedule_pat');
-      setStatus('error', 'Invalid or expired token. Refresh the page to re-enter.');
-      throw new Error('Auth failed');
+      throw new Error('Bad token - cleared. Try saving again.');
     }
-    if (!r.ok) throw new Error('HTTP ' + r.status);
+    if (!r.ok) throw new Error('Could not get file info: HTTP ' + r.status);
     return r.json();
   })
   .then(function(fileInfo) {
-    currentSHA = fileInfo.sha;
-    var content = atob(fileInfo.content.replace(/\n/g, ''));
-    var data = JSON.parse(content);
-    scheduleData = normalizeData(data);
-    setStatus('saved', 'Schedule loaded. Last refreshed: ' + new Date().toLocaleTimeString());
-    render();
-  })
-  .catch(function(err) {
-    if (err.message !== 'Auth failed') {
-      console.error('Load error:', err);
-      setStatus('error', 'Failed to load schedule. Check your connection and try Refresh.');
-    }
-  });
-}
-
-function saveData() {
-  var pat = getPAT();
-  if (!pat) { setStatus('error', 'No access token. Refresh the page to enter it.'); return; }
-  if (!currentSHA) {
-    setStatus('error', 'Cannot save - no file SHA. Try refreshing first.');
-    return;
-  }
-  setStatus('saving', 'Saving changes...');
-  var jsonStr = JSON.stringify(scheduleData, null, 2);
-  var base64 = btoa(unescape(encodeURIComponent(jsonStr)));
-  fetch(API_BASE, {
-    method: 'PUT',
-    headers: {
-      'Authorization': 'token ' + pat,
-      'Content-Type': 'application/json',
-      'Accept': 'application/vnd.github.v3+json'
-    },
-    body: JSON.stringify({
-      message: 'Update schedule - ' + new Date().toISOString(),
-      content: base64,
-      sha: currentSHA,
-      branch: BRANCH
-    })
+    // Step 2: PUT with the SHA
+    var jsonStr = JSON.stringify(scheduleData, null, 2);
+    var base64 = btoa(unescape(encodeURIComponent(jsonStr)));
+    return fetch(API_BASE, {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'token ' + pat,
+        'Content-Type': 'application/json',
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      body: JSON.stringify({
+        message: 'Update schedule - ' + new Date().toISOString(),
+        content: base64,
+        sha: fileInfo.sha,
+        branch: BRANCH
+      })
+    });
   })
   .then(function(r) {
     if (!r.ok) {
@@ -294,15 +291,12 @@ function saveData() {
     return r.json();
   })
   .then(function(result) {
-    if (result && result.content) {
-      currentSHA = result.content.sha;
-      setStatus('saved', 'Changes saved. Last updated: ' + new Date().toLocaleTimeString());
-    }
+    setStatus('saved', 'Changes saved! Last updated: ' + new Date().toLocaleTimeString());
   })
   .catch(function(err) {
     if (err.message !== 'Save failed') {
       console.error('Save error:', err);
-      setStatus('error', 'Failed to save. Check your connection.');
+      setStatus('error', err.message || 'Failed to save.');
     }
   });
 }
