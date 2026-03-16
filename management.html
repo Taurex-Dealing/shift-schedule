@@ -630,36 +630,55 @@ function buildDailyCoverage(data) {
 }
 
 function buildWeekendShifts() {
-  var monthMap = { 'Feb26': '02', 'Mar26': '03' };
-  var currentMM = monthMap[currentMonth] || '03';
-  var filtered = WEEKEND_SHIFTS.filter(function(s) {
-    return s.date.split('.')[1] === currentMM;
+  // Determine current month filter from currentMonth key
+  var monthNum = '';
+  if (currentMonth === 'Feb26') monthNum = '02';
+  else if (currentMonth === 'Mar26') monthNum = '03';
+
+  // Filter weekend shifts for the current month (DD.MM format)
+  var filtered = WEEKEND_SHIFTS.filter(function(row) {
+    var parts = row.date.split('.');
+    return parts.length === 2 && parts[1] === monthNum;
   });
-  var html = '<h2 style="margin-bottom:15px;font-size:1.1rem;">Weekend Shifts \u2014 ' + (currentMonth === 'Feb26' ? 'February' : 'March') + ' 2026</h2>';
+
+  // Day name lookup from DD.MM
+  var MONTH_NUMS = { '01': 0, '02': 1, '03': 2, '04': 3, '05': 4, '06': 5, '07': 6, '08': 7, '09': 8, '10': 9, '11': 10, '12': 11 };
+  function getDayNameFromDate(dateStr) {
+    var parts = dateStr.split('.');
+    var day = parseInt(parts[0], 10);
+    var mon = MONTH_NUMS[parts[1]];
+    if (mon === undefined) return '';
+    var dt = new Date(2026, mon, day);
+    return dt.toLocaleDateString('en', { weekday: 'short' });
+  }
+
+  var html = '<h3 style="margin-bottom:15px;color:var(--text-dim)">Weekend Shifts &mdash; ' + (currentMonth === 'Feb26' ? 'February' : 'March') + ' 2026</h3>';
+
   if (filtered.length === 0) {
-    html += '<p style="color:var(--text-dim);">No weekend shifts for this month.</p>';
+    html += '<div class="info-bar">No weekend shifts found for this month.</div>';
     return html;
   }
-  html += '<table class="schedule-table" style="min-width:auto;max-width:700px;">';
+
+  html += '<table class="summary-table" style="min-width:500px;max-width:800px;">';
   html += '<thead><tr>';
-  html += '<th style="text-align:left;">Date</th>';
+  html += '<th>Date</th>';
+  html += '<th>Day</th>';
   html += '<th style="background:#6366f1;color:#fff;">Night</th>';
   html += '<th style="background:#3b82f6;color:#fff;">Morning</th>';
   html += '<th style="background:#f59e0b;color:#000;">Afternoon</th>';
   html += '</tr></thead><tbody>';
-  filtered.forEach(function(s) {
-    var parts = s.date.split('.');
-    var day = parseInt(parts[0], 10);
-    var mon = parseInt(parts[1], 10) - 1;
-    var dt = new Date(2026, mon, day);
-    var dayName = dt.toLocaleDateString('en', { weekday: 'short' });
+
+  filtered.forEach(function(row) {
+    var dayName = getDayNameFromDate(row.date);
     html += '<tr>';
-    html += '<td style="text-align:left;font-weight:600;">' + dayName + ' ' + s.date + '</td>';
-    html += '<td>' + s.night + '</td>';
-    html += '<td>' + s.morning + '</td>';
-    html += '<td>' + s.afternoon + '</td>';
+    html += '<td>' + row.date + '</td>';
+    html += '<td>' + dayName + '</td>';
+    html += '<td><span class="shift-badge shift-night">' + row.night + '</span></td>';
+    html += '<td><span class="shift-badge shift-morning">' + row.morning + '</span></td>';
+    html += '<td><span class="shift-badge shift-evening">' + row.afternoon + '</span></td>';
     html += '</tr>';
   });
+
   html += '</tbody></table>';
   return html;
 }
