@@ -126,7 +126,6 @@
 var REPO = 'Taurex-Dealing/shift-schedule';
 var FILE_PATH = 'data.json';
 var BRANCH = 'master';
-var RAW_URL = 'https://raw.githubusercontent.com/' + REPO + '/' + BRANCH + '/' + FILE_PATH;
 var API_BASE = 'https://api.github.com/repos/' + REPO + '/contents/' + FILE_PATH;
 
 function getPAT() {
@@ -222,7 +221,7 @@ function switchMonth(m) {
 
 function loadData() {
   setStatus('loading', 'Loading schedule...');
-  fetch(RAW_URL + '?t=' + Date.now())
+  fetch('data.json?t=' + Date.now())
   .then(function(r) {
     if (!r.ok) throw new Error('HTTP ' + r.status);
     return r.json();
