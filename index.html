@@ -108,7 +108,7 @@
       <option value="Evening till 1 EET">Evening till 1 EET</option>
       <option value="Evening till 2 EET">Evening till 2 EET</option>
       <option value="Evening (15 MYT)">Evening (15 MYT)</option>
-      <option value=" Morning (11 EEST)">Morning (11 EEST)</option>
+      <option value="Morning (11 EEST)">Morning (11 EEST)</option>
       <option value="Night Shift">Night Shift</option>
       <option value="Holiday">Holiday</option>
       <option value="Half day">Half day</option>
@@ -123,7 +123,19 @@
 </div>
 
 <script>
-var API_URL = 'https://jsonblob.com/api/jsonBlob/019cf560-f183-755c-ba9a-ba0e172514ff';
+var REPO = 'Taurex-Dealing/shift-schedule';
+var FILE_PATH = 'data.json';
+var BRANCH = 'master';
+var API_BASE = 'https://api.github.com/repos/' + REPO + '/contents/' + FILE_PATH;
+
+function getPAT() {
+  var pat = localStorage.getItem('schedule_pat');
+  if (!pat) {
+    pat = prompt('Enter the schedule access token (you only need to do this once):');
+    if (pat) localStorage.setItem('schedule_pat', pat.trim());
+  }
+  return pat;
+}
 
 var NAME_MAP = { 'Nikolay': 'Nikolay Shumanov', 'Hayden': 'Hayden Ong' };
 function normalizeName(n) { return NAME_MAP[n] || n; }
@@ -146,6 +158,7 @@ function normalizeData(data) {
 var scheduleData = null;
 var currentMonth = 'Mar26';
 var editTarget = null;
+var currentSHA = null;
 
 var SHIFT_TYPES = [
   { key: 'Morning Shift', label: 'Morning', cls: 'shift-morning', short: 'AM' },
@@ -156,7 +169,7 @@ var SHIFT_TYPES = [
   { key: 'Evening till 1 EET', label: 'Eve till 1 EET', cls: 'shift-evening1', short: 'E1' },
   { key: 'Evening till 2 EET', label: 'Eve till 2 EET', cls: 'shift-evening2', short: 'E2' },
   { key: 'Evening (15 MYT)', label: 'Eve 15 MYT', cls: 'shift-evening15', short: '15M' },
-  { key: ' Morning (11 EEST)', label: 'Morn 11 EEST', cls: 'shift-morning11', short: '11E' },
+  { key: 'Morning (11 EEST)', label: 'Morn 11 EEST', cls: 'shift-morning11', short: '11E' },
   { key: 'Night Shift', label: 'Night', cls: 'shift-night', short: 'NT' },
   { key: 'Holiday', label: 'Holiday', cls: 'shift-holiday', short: 'HOL' },
   { key: 'Half day', label: 'Half day', cls: 'shift-halfday', short: 'HD' },
@@ -208,35 +221,89 @@ function switchMonth(m) {
 }
 
 function loadData() {
+  var pat = getPAT();
+  if (!pat) { setStatus('error', 'No access token. Refresh the page to enter it.'); return; }
   setStatus('loading', 'Loading schedule...');
-  fetch(API_URL, { headers: { 'Accept': 'application/json' } })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      scheduleData = normalizeData(data);
-      setStatus('saved', 'Schedule loaded. Last refreshed: ' + new Date().toLocaleTimeString());
-      render();
-    })
-    .catch(function(err) {
+  fetch(API_BASE + '?ref=' + BRANCH + '&t=' + Date.now(), {
+    headers: {
+      'Authorization': 'token ' + pat,
+      'Accept': 'application/vnd.github.v3+json'
+    }
+  })
+  .then(function(r) {
+    if (r.status === 401 || r.status === 403) {
+      localStorage.removeItem('schedule_pat');
+      setStatus('error', 'Invalid or expired token. Refresh the page to re-enter.');
+      throw new Error('Auth failed');
+    }
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  })
+  .then(function(fileInfo) {
+    currentSHA = fileInfo.sha;
+    var content = atob(fileInfo.content.replace(/\n/g, ''));
+    var data = JSON.parse(content);
+    scheduleData = normalizeData(data);
+    setStatus('saved', 'Schedule loaded. Last refreshed: ' + new Date().toLocaleTimeString());
+    render();
+  })
+  .catch(function(err) {
+    if (err.message !== 'Auth failed') {
+      console.error('Load error:', err);
       setStatus('error', 'Failed to load schedule. Check your connection and try Refresh.');
-    });
+    }
+  });
 }
 
 function saveData() {
+  var pat = getPAT();
+  if (!pat) { setStatus('error', 'No access token. Refresh the page to enter it.'); return; }
+  if (!currentSHA) {
+    setStatus('error', 'Cannot save - no file SHA. Try refreshing first.');
+    return;
+  }
   setStatus('saving', 'Saving changes...');
-  fetch(API_URL, {
+  var jsonStr = JSON.stringify(scheduleData, null, 2);
+  var base64 = btoa(unescape(encodeURIComponent(jsonStr)));
+  fetch(API_BASE, {
     method: 'PUT',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify(scheduleData)
+    headers: {
+      'Authorization': 'token ' + pat,
+      'Content-Type': 'application/json',
+      'Accept': 'application/vnd.github.v3+json'
+    },
+    body: JSON.stringify({
+      message: 'Update schedule - ' + new Date().toISOString(),
+      content: base64,
+      sha: currentSHA,
+      branch: BRANCH
+    })
   })
   .then(function(r) {
-    if (r.ok) {
+    if (!r.ok) {
+      return r.json().then(function(err) {
+        if (r.status === 409) {
+          setStatus('error', 'Conflict - someone else edited. Refreshing...');
+          setTimeout(loadData, 1500);
+        } else {
+          setStatus('error', 'Save failed: ' + (err.message || r.status));
+        }
+        throw new Error('Save failed');
+      });
+    }
+    return r.json();
+  })
+  .then(function(result) {
+    if (result && result.content) {
+      currentSHA = result.content.sha;
       setStatus('saved', 'Changes saved. Last updated: ' + new Date().toLocaleTimeString());
-    } else {
-      setStatus('error', 'Failed to save. Try again.');
     }
   })
   .catch(function(err) {
-    setStatus('error', 'Failed to save. Check your connection.');
+    if (err.message !== 'Save failed') {
+      console.error('Save error:', err);
+      setStatus('error', 'Failed to save. Check your connection.');
+    }
   });
 }
 
