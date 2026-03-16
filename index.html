@@ -117,6 +117,12 @@ var FILE_PATH = 'data.json';
 var BRANCH = 'master';
 var API_BASE = 'https://api.github.com/repos/' + REPO + '/contents/' + FILE_PATH;
 
+// Clear old token (one-time reset for token update)
+if (localStorage.getItem('schedule_pat_v') !== '2') {
+  localStorage.removeItem('schedule_pat');
+  localStorage.setItem('schedule_pat_v', '2');
+}
+
 function getPAT() {
   var pat = localStorage.getItem('schedule_pat');
   if (!pat) {
