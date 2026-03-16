@@ -772,6 +772,20 @@ document.addEventListener('keydown', function(e) {
 // Auto-refresh every 2 minutes
 setInterval(function() { loadData(); }, 120000);
 
+// Auto version check - reload page if a newer build is deployed
+var BUILD_TS = '1773650515';
+(function() {
+  if (window.location.search.indexOf('_cb=') > -1) return;
+  fetch('v.txt?_=' + Date.now())
+    .then(function(r) { return r.text(); })
+    .then(function(v) {
+      v = v.trim();
+      if (v && v !== BUILD_TS) {
+        window.location.replace(window.location.pathname + '?_cb=' + v);
+      }
+    }).catch(function(){});
+})();
+
 render();
 </script>
 </body>
