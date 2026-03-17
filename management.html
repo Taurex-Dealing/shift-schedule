@@ -854,7 +854,7 @@ var EMBEDDED_DATA = {
             "shifts": [
               "Morning Shift",
               "Morning Shift",
-              "Night Shift",
+              "Morning Shift",
               "Morning Shift",
               "Morning Shift",
               null,
@@ -890,7 +890,7 @@ var EMBEDDED_DATA = {
             "shifts": [
               "-",
               "-",
-              "Morning Shift",
+              "Morning (7 MYT)",
               "Holiday",
               "Holiday",
               null,
@@ -2720,29 +2720,34 @@ function loadData(force) {
     return;
   }
   setStatus('loading', 'Refreshing schedule...');
-  // Try GitHub API first (always fresh), fall back to CDN
+  // Always try GitHub API first (always fresh, no CDN cache)
   var pat = localStorage.getItem('schedule_pat');
   if (pat) {
-    fetch(API_BASE + '?ref=' + BRANCH, {
-      headers: { 'Authorization': 'token ' + pat, 'Accept': 'application/vnd.github.v3+json' }
-    })
-    .then(function(r) {
-      if (!r.ok) throw new Error('API ' + r.status);
-      return r.json();
-    })
-    .then(function(fileInfo) {
-      var json = JSON.parse(decodeURIComponent(escape(atob(fileInfo.content))));
-      scheduleData = normalizeData(json);
-      setStatus('saved', 'Schedule refreshed: ' + new Date().toLocaleTimeString());
-      render();
-    })
-    .catch(function(err) {
-      console.error('API refresh failed, trying CDN:', err);
-      loadDataFromCDN();
-    });
+    loadDataFromAPI(pat);
   } else {
     loadDataFromCDN();
   }
+}
+function loadDataFromAPI(pat) {
+  fetch(API_BASE + '?ref=' + BRANCH, {
+    headers: { 'Authorization': 'token ' + pat, 'Accept': 'application/vnd.github.v3+json' }
+  })
+  .then(function(r) {
+    if (!r.ok) throw new Error('API ' + r.status);
+    return r.json();
+  })
+  .then(function(fileInfo) {
+    var raw = fileInfo.content.replace(/\s/g, '');
+    var decoded = decodeURIComponent(escape(atob(raw)));
+    var json = JSON.parse(decoded);
+    scheduleData = normalizeData(json);
+    setStatus('saved', 'Schedule synced: ' + new Date().toLocaleTimeString());
+    render();
+  })
+  .catch(function(err) {
+    console.error('API refresh failed, trying CDN:', err);
+    loadDataFromCDN();
+  });
 }
 function loadDataFromCDN() {
   fetch('data.json?t=' + Date.now())
@@ -2756,7 +2761,7 @@ function loadDataFromCDN() {
     render();
   })
   .catch(function(err) {
-    console.error('Refresh error:', err);
+    console.error('CDN refresh error:', err);
     setStatus('error', 'Could not refresh. Using last loaded data.');
   });
 }
@@ -3177,7 +3182,7 @@ document.addEventListener('keydown', function(e) {
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1773746697';
+var BUILD_TS = '1773746830';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
