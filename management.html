@@ -854,7 +854,7 @@ var EMBEDDED_DATA = {
             "shifts": [
               "Morning Shift",
               "Morning Shift",
-              "Morning Shift",
+              "Night Shift",
               "Morning Shift",
               "Morning Shift",
               null,
@@ -890,7 +890,7 @@ var EMBEDDED_DATA = {
             "shifts": [
               "-",
               "-",
-              "Morning (7 MYT)",
+              "Morning Shift",
               "Holiday",
               "Holiday",
               null,
@@ -2629,6 +2629,7 @@ var scheduleData = normalizeData(EMBEDDED_DATA);
 var currentMonth = 'Mar26';
 var currentTab = 'schedule';
 var editTarget = null;
+var lastSaveTime = 0;
 
 var SHIFT_TYPES = [
   { key: 'Morning Shift', label: 'Morning', cls: 'shift-morning', short: 'AM' },
@@ -2713,8 +2714,37 @@ function switchTab(t) {
   render();
 }
 
-function loadData() {
+function loadData(force) {
+  // Skip auto-refresh for 90s after a save (GitHub Pages CDN is stale)
+  if (!force && lastSaveTime && (Date.now() - lastSaveTime < 90000)) {
+    return;
+  }
   setStatus('loading', 'Refreshing schedule...');
+  // Try GitHub API first (always fresh), fall back to CDN
+  var pat = localStorage.getItem('schedule_pat');
+  if (pat) {
+    fetch(API_BASE + '?ref=' + BRANCH, {
+      headers: { 'Authorization': 'token ' + pat, 'Accept': 'application/vnd.github.v3+json' }
+    })
+    .then(function(r) {
+      if (!r.ok) throw new Error('API ' + r.status);
+      return r.json();
+    })
+    .then(function(fileInfo) {
+      var json = JSON.parse(decodeURIComponent(escape(atob(fileInfo.content))));
+      scheduleData = normalizeData(json);
+      setStatus('saved', 'Schedule refreshed: ' + new Date().toLocaleTimeString());
+      render();
+    })
+    .catch(function(err) {
+      console.error('API refresh failed, trying CDN:', err);
+      loadDataFromCDN();
+    });
+  } else {
+    loadDataFromCDN();
+  }
+}
+function loadDataFromCDN() {
   fetch('data.json?t=' + Date.now())
   .then(function(r) {
     if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -2764,7 +2794,10 @@ function saveData() {
       }
       return r.json();
     })
-    .then(function(result) { setStatus('saved', 'Changes saved! Last updated: ' + new Date().toLocaleTimeString()); })
+    .then(function(result) {
+      lastSaveTime = Date.now();
+      setStatus('saved', 'Changes saved! Last updated: ' + new Date().toLocaleTimeString());
+    })
     .catch(function(err) {
       if (err.message !== 'Save failed') { console.error('Save error:', err); setStatus('error', err.message || 'Failed to save.'); }
     });
@@ -3144,7 +3177,7 @@ document.addEventListener('keydown', function(e) {
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1773746445';
+var BUILD_TS = '1773746697';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
