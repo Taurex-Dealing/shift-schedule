@@ -1182,6 +1182,62 @@
       "Afnan",
       "Zahid",
       "Sean"
+    ],
+    "weekend_shifts": [
+      {
+        "date": "01.03",
+        "night": "Afnan",
+        "morning": "Adam Nor",
+        "afternoon": "Petar"
+      },
+      {
+        "date": "07.03",
+        "night": "Hayden",
+        "morning": "Adam Nor",
+        "afternoon": "Ognyan"
+      },
+      {
+        "date": "08.03",
+        "night": "Hayden",
+        "morning": "Ognyan",
+        "afternoon": "Hristo"
+      },
+      {
+        "date": "14.03",
+        "night": "Afnan",
+        "morning": "Adam Nor",
+        "afternoon": "Win"
+      },
+      {
+        "date": "15.03",
+        "night": "Afnan",
+        "morning": "Adam Nor",
+        "afternoon": "Petar"
+      },
+      {
+        "date": "21.03",
+        "night": "Ognyan",
+        "morning": "Afnan",
+        "afternoon": "Hristo"
+      },
+      {
+        "date": "22.03",
+        "night": "Ognyan",
+        "morning": "Hristo",
+        "afternoon": "Adam Taylor"
+      },
+      {
+        "date": "28.03",
+        "night": "Hayden",
+        "morning": "Adam Nor",
+        "afternoon": "Adam Taylor"
+      },
+      {
+        "date": "29.03",
+        "night": "Hayden",
+        "morning": "Adam Nor",
+        "afternoon": "Hristo"
+      }
     ]
   },
   "Feb26": {
@@ -2367,6 +2423,56 @@
       "Afnan",
       "Zahid",
       "Miroslav"
+    ],
+    "weekend_shifts": [
+      {
+        "date": "01.02",
+        "night": "Adam Nor",
+        "morning": "Ognyan",
+        "afternoon": "Hristo"
+      },
+      {
+        "date": "07.02",
+        "night": "Hayden",
+        "morning": "Adam Nor",
+        "afternoon": "Ognyan"
+      },
+      {
+        "date": "08.02",
+        "night": "Hayden",
+        "morning": "Adam Nor",
+        "afternoon": "Ognyan"
+      },
+      {
+        "date": "14.02",
+        "night": "Afnan",
+        "morning": "Petar",
+        "afternoon": "Win"
+      },
+      {
+        "date": "15.02",
+        "night": "Afnan",
+        "morning": "Hristo",
+        "afternoon": "Petar"
+      },
+      {
+        "date": "21.02",
+        "night": "Adam Nor",
+        "morning": "Petar",
+        "afternoon": "Ognyan"
+      },
+      {
+        "date": "22.02",
+        "night": "Adam Nor",
+        "morning": "Hristo",
+        "afternoon": "Ognyan"
+      },
+      {
+        "date": "28.02",
+        "night": "Afnan",
+        "morning": "Hayden",
+        "afternoon": "Hristo"
+      }
     ]
   },
   "Apr26": {
@@ -3358,6 +3464,56 @@
       "Afnan",
       "Zahid",
       "Sean"
+    ],
+    "weekend_shifts": [
+      {
+        "date": "04.04",
+        "night": "Afnan",
+        "morning": "-",
+        "afternoon": "-"
+      },
+      {
+        "date": "05.04",
+        "night": "Afnan",
+        "morning": "-",
+        "afternoon": "-"
+      },
+      {
+        "date": "11.04",
+        "night": "Adam Nor",
+        "morning": "-",
+        "afternoon": "-"
+      },
+      {
+        "date": "12.04",
+        "night": "Adam Nor",
+        "morning": "-",
+        "afternoon": "-"
+      },
+      {
+        "date": "18.04",
+        "night": "Afnan",
+        "morning": "-",
+        "afternoon": "-"
+      },
+      {
+        "date": "19.04",
+        "night": "Afnan",
+        "morning": "-",
+        "afternoon": "-"
+      },
+      {
+        "date": "25.04",
+        "night": "Adam Nor",
+        "morning": "-",
+        "afternoon": "-"
+      },
+      {
+        "date": "26.04",
+        "night": "Adam Nor",
+        "morning": "-",
+        "afternoon": "-"
+      }
     ]
   }
 }
