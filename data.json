@@ -2518,9 +2518,9 @@
             "shifts": [
               null,
               null,
-              "Evening till 2 EET",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
               null,
               null
             ]
@@ -2734,7 +2734,7 @@
           {
             "name": "Nikolay Shumanov",
             "shifts": [
-              "Evening till 2 EET",
+              "Evening till 1 EET",
               "Evening Shift",
               "Evening Shift",
               "Evening Shift",
@@ -2771,10 +2771,10 @@
             "name": "Win",
             "shifts": [
               "-",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
               null,
               null
             ]
@@ -2904,11 +2904,11 @@
           {
             "name": "Stanimir",
             "shifts": [
-              "Evening till 2 EET",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
               null,
               null
             ]
@@ -3134,11 +3134,11 @@
           {
             "name": "Petar",
             "shifts": [
-              "Evening till 2 EET",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
               null,
               null
             ]
@@ -3304,11 +3304,11 @@
           {
             "name": "Ognyan",
             "shifts": [
-              "Evening till 2 EET",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
-              "Evening till 2 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
               null,
               null
             ]
