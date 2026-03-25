@@ -2221,8 +2221,8 @@
           {
             "name": "Hristo",
             "shifts": [
-              "Morning Shift",
-              "Morning Shift",
+              "Holiday",
+              "Holiday",
               null,
               null,
               null,
@@ -2494,7 +2494,7 @@
             "shifts": [
               null,
               null,
-              "Morning Shift",
+              "Holiday",
               "Morning Shift",
               "Morning Shift",
               null,
