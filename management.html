@@ -4136,7 +4136,11 @@ function getStaffDayMap(data) {
       for (var i = 0; i < 7; i++) {
         var dayNum = week.dates[i];
         if (dayNum && dayNum >= 1 && dayNum <= info.days) {
-          if (member.shifts[i]) {
+          var spillover = false;
+          for (var j = 0; j < i; j++) {
+            if (week.dates[j] && week.dates[j] > dayNum) { spillover = true; break; }
+          }
+          if (!spillover && member.shifts[i]) {
             staffMap[name][dayNum] = member.shifts[i];
           }
         }
@@ -4202,6 +4206,11 @@ function computeSummary(data) {
       for (var i = 0; i < 7; i++) {
         var dayNum = week.dates[i];
         if (!dayNum || dayNum < 1 || dayNum > info.days) continue;
+        var spillover = false;
+        for (var j = 0; j < i; j++) {
+          if (week.dates[j] && week.dates[j] > dayNum) { spillover = true; break; }
+        }
+        if (spillover) continue;
         var val = member.shifts[i];
         if (!val) continue;
         var we = isWeekend(currentMonth, dayNum);
@@ -4305,6 +4314,11 @@ function buildDailyCoverage(data) {
       for (var i = 0; i < 7; i++) {
         var dayNum = week.dates[i];
         if (!dayNum || dayNum < 1 || dayNum > info.days) continue;
+        var spillover = false;
+        for (var j = 0; j < i; j++) {
+          if (week.dates[j] && week.dates[j] > dayNum) { spillover = true; break; }
+        }
+        if (spillover) continue;
         var val = member.shifts[i];
         if (!val || val === '-' || val === 'Holiday' || val === 'Sick Leave' || val === 'Half day') continue;
         if (!dayData[dayNum].shifts[val]) { dayData[dayNum].shifts[val] = 0; dayData[dayNum].names[val] = []; }
