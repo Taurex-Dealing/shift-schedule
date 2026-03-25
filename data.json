@@ -2355,7 +2355,7 @@
             "shifts": [
               "Holiday",
               "Holiday",
-              null,
+              "Holiday",
               null,
               null,
               null,
@@ -3659,6 +3659,55 @@
       "Zahid",
       "Sean"
     ],
-    "weekend_shifts": []
+    "weekend_shifts": [
+      {
+        "date": "04.04",
+        "night": "Afnan",
+        "morning": "-",
+        "afternoon": "Win"
+      },
+      {
+        "date": "05.04",
+        "night": "Afnan",
+        "morning": "Petar",
+        "afternoon": "-"
+      },
+      {
+        "date": "11.04",
+        "night": "Adam Nor",
+        "morning": "-",
+        "afternoon": "Win"
+      },
+      {
+        "date": "12.04",
+        "night": "Adam Nor",
+        "morning": "Ognyan",
+        "afternoon": "Petar"
+      },
+      {
+        "date": "18.04",
+        "night": "Afnan",
+        "morning": "Petar",
+        "afternoon": "Win"
+      },
+      {
+        "date": "19.04",
+        "night": "Afnan",
+        "morning": "Petar",
+        "afternoon": "Ognyan"
+      },
+      {
+        "date": "25.04",
+        "night": "Adam Nor",
+        "morning": "Petar",
+        "afternoon": "Ognyan"
+      },
+      {
+        "date": "26.04",
+        "night": "Adam Nor",
+        "morning": "Petar",
+        "afternoon": "Ognyan"
+      }
+    ]
   }
 }

@@ -2490,7 +2490,7 @@ var EMBEDDED_DATA = {
             "shifts": [
               "Holiday",
               "Holiday",
-              null,
+              "Holiday",
               null,
               null,
               null,
@@ -3794,7 +3794,56 @@ var EMBEDDED_DATA = {
       "Zahid",
       "Sean"
     ],
-    "weekend_shifts": []
+    "weekend_shifts": [
+      {
+        "date": "04.04",
+        "night": "Afnan",
+        "morning": "-",
+        "afternoon": "Win"
+      },
+      {
+        "date": "05.04",
+        "night": "Afnan",
+        "morning": "Petar",
+        "afternoon": "-"
+      },
+      {
+        "date": "11.04",
+        "night": "Adam Nor",
+        "morning": "-",
+        "afternoon": "Win"
+      },
+      {
+        "date": "12.04",
+        "night": "Adam Nor",
+        "morning": "Ognyan",
+        "afternoon": "Petar"
+      },
+      {
+        "date": "18.04",
+        "night": "Afnan",
+        "morning": "Petar",
+        "afternoon": "Win"
+      },
+      {
+        "date": "19.04",
+        "night": "Afnan",
+        "morning": "Petar",
+        "afternoon": "Ognyan"
+      },
+      {
+        "date": "25.04",
+        "night": "Adam Nor",
+        "morning": "Petar",
+        "afternoon": "Ognyan"
+      },
+      {
+        "date": "26.04",
+        "night": "Adam Nor",
+        "morning": "Petar",
+        "afternoon": "Ognyan"
+      }
+    ]
   }
 };
 
@@ -4152,7 +4201,7 @@ document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { clo
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1774417653';
+var BUILD_TS = '1774418424';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
