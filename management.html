@@ -1337,23 +1337,6 @@ var EMBEDDED_DATA = {
         ]
       }
     ],
-    "staff_order": [
-      "Hristo",
-      "Victor",
-      "Stanimir",
-      "Ognyan",
-      "Nikolay Shumanov",
-      "Petar",
-      "Matthew",
-      "Win",
-      "Sarang",
-      "Adam Taylor",
-      "Adam Nor",
-      "Hayden Ong",
-      "Afnan",
-      "Zahid",
-      "Miroslav"
-    ],
     "weekend_shifts": [
       {
         "date": "01.02",
@@ -2572,23 +2555,6 @@ var EMBEDDED_DATA = {
         ]
       }
     ],
-    "staff_order": [
-      "Hristo",
-      "Victor",
-      "Stanimir",
-      "Ognyan",
-      "Nikolay Shumanov",
-      "Petar",
-      "Matthew",
-      "Win",
-      "Sarang",
-      "Adam Taylor",
-      "Adam Nor",
-      "Hayden Ong",
-      "Afnan",
-      "Zahid",
-      "Sean"
-    ],
     "weekend_shifts": [
       {
         "date": "01.03",
@@ -2668,7 +2634,7 @@ var EMBEDDED_DATA = {
               "Holiday",
               "Morning Shift",
               "Morning Shift",
-              null,
+              "Morning Shift",
               null
             ]
           },
@@ -2715,7 +2681,7 @@ var EMBEDDED_DATA = {
               null,
               "Morning Shift",
               "Morning Shift",
-              "Morning Shift",
+              "Evening Shift",
               null,
               null
             ]
@@ -2727,7 +2693,7 @@ var EMBEDDED_DATA = {
               null,
               "Evening Shift",
               "Evening Shift",
-              "Evening Shift",
+              "Morning Shift",
               null,
               "Morning Shift"
             ]
@@ -3813,28 +3779,11 @@ var EMBEDDED_DATA = {
         ]
       }
     ],
-    "staff_order": [
-      "Hristo",
-      "Victor",
-      "Stanimir",
-      "Ognyan",
-      "Nikolay Shumanov",
-      "Petar",
-      "Matthew",
-      "Win",
-      "Sarang",
-      "Adam Taylor",
-      "Adam Nor",
-      "Hayden Ong",
-      "Afnan",
-      "Zahid",
-      "Sean"
-    ],
     "weekend_shifts": [
       {
         "date": "04.04",
         "night": "Afnan",
-        "morning": "-",
+        "morning": "Hristo",
         "afternoon": "Win"
       },
       {
@@ -4492,7 +4441,7 @@ document.addEventListener('keydown', function(e) {
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1774419719';
+var BUILD_TS = '1774594780';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())

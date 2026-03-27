@@ -1166,23 +1166,6 @@
         ]
       }
     ],
-    "staff_order": [
-      "Hristo",
-      "Victor",
-      "Stanimir",
-      "Ognyan",
-      "Nikolay Shumanov",
-      "Petar",
-      "Matthew",
-      "Win",
-      "Sarang",
-      "Adam Taylor",
-      "Adam Nor",
-      "Hayden Ong",
-      "Afnan",
-      "Zahid",
-      "Miroslav"
-    ],
     "weekend_shifts": [
       {
         "date": "01.02",
@@ -2401,23 +2384,6 @@
         ]
       }
     ],
-    "staff_order": [
-      "Hristo",
-      "Victor",
-      "Stanimir",
-      "Ognyan",
-      "Nikolay Shumanov",
-      "Petar",
-      "Matthew",
-      "Win",
-      "Sarang",
-      "Adam Taylor",
-      "Adam Nor",
-      "Hayden Ong",
-      "Afnan",
-      "Zahid",
-      "Sean"
-    ],
     "weekend_shifts": [
       {
         "date": "01.03",
@@ -2534,7 +2500,7 @@
               "Morning Shift",
               "Morning Shift",
               null,
-              "Evening Shift"
+              null
             ]
           },
           {
@@ -2727,7 +2693,7 @@
               "Evening Shift",
               "Evening Shift",
               "-",
-              "Morning Shift",
+              null,
               "Morning Shift"
             ]
           },
@@ -3079,8 +3045,8 @@
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              "Evening Shift",
-              "Evening Shift"
+              null,
+              null
             ]
           },
           {
@@ -3115,8 +3081,8 @@
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              null,
-              null
+              "Evening Shift",
+              "Evening Shift"
             ]
           },
           {
@@ -3642,28 +3608,11 @@
         ]
       }
     ],
-    "staff_order": [
-      "Hristo",
-      "Victor",
-      "Stanimir",
-      "Ognyan",
-      "Nikolay Shumanov",
-      "Petar",
-      "Matthew",
-      "Win",
-      "Sarang",
-      "Adam Taylor",
-      "Adam Nor",
-      "Hayden Ong",
-      "Afnan",
-      "Zahid",
-      "Sean"
-    ],
     "weekend_shifts": [
       {
         "date": "04.04",
         "night": "Afnan",
-        "morning": "-",
+        "morning": "Hristo",
         "afternoon": "Win"
       },
       {
