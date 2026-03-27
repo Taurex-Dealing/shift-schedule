@@ -132,6 +132,18 @@
     </div>
   </div>
 </div>
+<div class="modal-overlay" id="weekendEditModal">
+  <div class="modal">
+    <h3 id="weekendModalTitle">Edit Weekend Shift</h3>
+    <select id="weekendStaffSelect">
+      <option value="-">-- Unassigned (-) --</option>
+    </select>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeWeekendModal()">Cancel</button>
+      <button class="btn-save" onclick="saveWeekendShift()">Save</button>
+    </div>
+  </div>
+</div>
 <script>
 var EMBEDDED_DATA = {
   "Feb26": {
@@ -3918,6 +3930,7 @@ var currentMonth = 'Apr26';
 var currentTab = 'schedule';
 var editTarget = null;
 var lastSaveTime = 0;
+var weekendEditTarget = null;
 
 var SHIFT_TYPES = [
   { key: 'Morning Shift', label: 'Morning', cls: 'shift-morning', short: 'AM' },
@@ -4107,9 +4120,9 @@ function buildWeekendShifts() {
     var dayName = dt.toLocaleDateString('en', { weekday: 'short' });
     html += '<tr>';
     html += '<td style="text-align:left;font-weight:600;">' + dayName + ' ' + s.date + '</td>';
-    html += '<td>' + (s.night || '-') + '</td>';
-    html += '<td>' + (s.morning || '-') + '</td>';
-    html += '<td>' + (s.afternoon || '-') + '</td>';
+    html += '<td class="editable" onclick="openWeekendEdit(\'' + s.date + '\',\'night\')">' + (s.night || '-') + '</td>';
+    html += '<td class="editable" onclick="openWeekendEdit(\'' + s.date + '\',\'morning\')">' + (s.morning || '-') + '</td>';
+    html += '<td class="editable" onclick="openWeekendEdit(\'' + s.date + '\',\'afternoon\')">' + (s.afternoon || '-') + '</td>';
     html += '</tr>';
   });
   html += '</tbody></table>';
@@ -4211,11 +4224,50 @@ function saveShift() {
   saveData();
 }
 
-document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeModal(); cancelToken(); } });
+function openWeekendEdit(dateStr, slot) {
+  weekendEditTarget = { date: dateStr, slot: slot };
+  var data = scheduleData[currentMonth];
+  var entry = data.weekend_shifts ? data.weekend_shifts.find(function(ws) { return ws.date === dateStr; }) : null;
+  var currentVal = entry ? (entry[slot] || '-') : '-';
+  var sel = document.getElementById('weekendStaffSelect');
+  sel.innerHTML = '<option value="-">-- Unassigned (-) --</option>';
+  if (data.staff_order) {
+    data.staff_order.forEach(function(name) {
+      var opt = document.createElement('option');
+      opt.value = name;
+      opt.textContent = name;
+      sel.appendChild(opt);
+    });
+  }
+  sel.value = currentVal;
+  var slotLabel = slot.charAt(0).toUpperCase() + slot.slice(1);
+  document.getElementById('weekendModalTitle').textContent = dateStr + ' \u2014 ' + slotLabel;
+  document.getElementById('weekendEditModal').classList.add('show');
+}
+
+function closeWeekendModal() {
+  document.getElementById('weekendEditModal').classList.remove('show');
+  weekendEditTarget = null;
+}
+
+function saveWeekendShift() {
+  if (!weekendEditTarget) return;
+  var val = document.getElementById('weekendStaffSelect').value;
+  var data = scheduleData[currentMonth];
+  if (data.weekend_shifts) {
+    var entry = data.weekend_shifts.find(function(ws) { return ws.date === weekendEditTarget.date; });
+    if (entry) { entry[weekendEditTarget.slot] = val; }
+  }
+  closeWeekendModal();
+  render();
+  saveData();
+}
+
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeModal(); closeWeekendModal(); cancelToken(); } });
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1774596610';
+var BUILD_TS = '1774597037';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
