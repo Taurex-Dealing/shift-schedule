@@ -1322,13 +1322,13 @@ var EMBEDDED_DATA = {
       },
       {
         "date": "07.02",
-        "night": "Hayden",
+        "night": "Hayden Ong",
         "morning": "Adam Nor",
         "afternoon": "Ognyan"
       },
       {
         "date": "08.02",
-        "night": "Hayden",
+        "night": "Hayden Ong",
         "morning": "Adam Nor",
         "afternoon": "Ognyan"
       },
@@ -1359,7 +1359,7 @@ var EMBEDDED_DATA = {
       {
         "date": "28.02",
         "night": "Afnan",
-        "morning": "Hayden",
+        "morning": "Hayden Ong",
         "afternoon": "Hristo"
       }
     ],
@@ -2557,13 +2557,13 @@ var EMBEDDED_DATA = {
       },
       {
         "date": "07.03",
-        "night": "Hayden",
+        "night": "Hayden Ong",
         "morning": "Adam Nor",
         "afternoon": "Ognyan"
       },
       {
         "date": "08.03",
-        "night": "Hayden",
+        "night": "Hayden Ong",
         "morning": "Ognyan",
         "afternoon": "Hristo"
       },
@@ -2593,13 +2593,13 @@ var EMBEDDED_DATA = {
       },
       {
         "date": "28.03",
-        "night": "Hayden",
+        "night": "Hayden Ong",
         "morning": "Adam Nor",
         "afternoon": "Adam Taylor"
       },
       {
         "date": "29.03",
-        "night": "Hayden",
+        "night": "Hayden Ong",
         "morning": "Adam Nor",
         "afternoon": "Hristo"
       }
@@ -3800,12 +3800,12 @@ var EMBEDDED_DATA = {
         "date": "05.04",
         "night": "Afnan",
         "morning": "Petar",
-        "afternoon": "-"
+        "afternoon": "Adam Taylor"
       },
       {
         "date": "11.04",
         "night": "Adam Nor",
-        "morning": "-",
+        "morning": "Adam Taylor",
         "afternoon": "Win"
       },
       {
@@ -3921,6 +3921,13 @@ function normalizeData(data) {
     d[month].staff_order = d[month].staff_order.filter(function(n) {
       if (seen[n]) return false; seen[n] = true; return true;
     });
+    if (d[month].weekend_shifts) {
+      d[month].weekend_shifts.forEach(function(ws) {
+        ['night','morning','afternoon'].forEach(function(slot) {
+          if (ws[slot]) ws[slot] = normalizeName(ws[slot]);
+        });
+      });
+    }
   }
   return d;
 }
@@ -4267,7 +4274,7 @@ document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { clo
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1774597037';
+var BUILD_TS = '1774614567';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
