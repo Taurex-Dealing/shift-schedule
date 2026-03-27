@@ -1215,6 +1215,23 @@
         "morning": "Hayden",
         "afternoon": "Hristo"
       }
+    ],
+    "staff_order": [
+      "Hristo",
+      "Victor",
+      "Stanimir",
+      "Ognyan",
+      "Nikolay Shumanov",
+      "Petar",
+      "Matthew",
+      "Win",
+      "Sarang",
+      "Adam Taylor",
+      "Adam Nor",
+      "Hayden Ong",
+      "Afnan",
+      "Zahid",
+      "Miroslav"
     ]
   },
   "Mar26": {
@@ -2439,6 +2456,23 @@
         "morning": "Adam Nor",
         "afternoon": "Hristo"
       }
+    ],
+    "staff_order": [
+      "Hristo",
+      "Victor",
+      "Stanimir",
+      "Ognyan",
+      "Nikolay Shumanov",
+      "Petar",
+      "Matthew",
+      "Win",
+      "Sarang",
+      "Adam Taylor",
+      "Adam Nor",
+      "Hayden Ong",
+      "Afnan",
+      "Zahid",
+      "Sean"
     ]
   },
   "Apr26": {
@@ -3657,6 +3691,23 @@
         "morning": "Petar",
         "afternoon": "Ognyan"
       }
+    ],
+    "staff_order": [
+      "Hristo",
+      "Victor",
+      "Stanimir",
+      "Ognyan",
+      "Nikolay Shumanov",
+      "Petar",
+      "Matthew",
+      "Win",
+      "Sarang",
+      "Adam Taylor",
+      "Adam Nor",
+      "Hayden Ong",
+      "Afnan",
+      "Zahid",
+      "Sean"
     ]
   }
 }
