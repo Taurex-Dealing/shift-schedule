@@ -142,7 +142,7 @@
       <option value="Evening till 1 EET">Evening till 1 EET</option>
       <option value="Evening till 2 EET">Evening till 2 EET</option>
       <option value="Evening (15 MYT)">Evening (15 MYT)</option>
-      <option value=" Morning (11 EEST)">Morning (11 EEST)</option>
+      <option value="Morning (11 EEST)">Morning (11 EEST)</option>
       <option value="Night Shift">Night Shift</option>
       <option value="Holiday">Holiday</option>
       <option value="Half day">Half day</option>
@@ -3928,9 +3928,19 @@ function normalizeName(n) { return NAME_MAP[n] || n; }
 function normalizeData(data) {
   var d = JSON.parse(JSON.stringify(data));
   for (var month in d) {
+    if (!d[month].weeks) continue;
     d[month].weeks.forEach(function(week) {
       week.staff.forEach(function(member) { member.name = normalizeName(member.name); });
     });
+    if (!d[month].staff_order) {
+      var names = []; var nameSet = {};
+      d[month].weeks.forEach(function(week) {
+        week.staff.forEach(function(member) {
+          if (!nameSet[member.name]) { nameSet[member.name] = true; names.push(member.name); }
+        });
+      });
+      d[month].staff_order = names;
+    }
     d[month].staff_order = d[month].staff_order.map(normalizeName);
     var seen = {};
     d[month].staff_order = d[month].staff_order.filter(function(n) {
@@ -3955,7 +3965,7 @@ var SHIFT_TYPES = [
   { key: 'Evening till 1 EET', label: 'Eve till 1 EET', cls: 'shift-evening1', short: 'E1' },
   { key: 'Evening till 2 EET', label: 'Eve till 2 EET', cls: 'shift-evening2', short: 'E2' },
   { key: 'Evening (15 MYT)', label: 'Eve 15 MYT', cls: 'shift-evening15', short: '15M' },
-  { key: ' Morning (11 EEST)', label: 'Morn 11 EEST', cls: 'shift-morning11', short: '11E' },
+  { key: 'Morning (11 EEST)', label: 'Morn 11 EEST', cls: 'shift-morning11', short: '11E' },
   { key: 'Night Shift', label: 'Night', cls: 'shift-night', short: 'NT' },
   { key: 'Holiday', label: 'Holiday', cls: 'shift-holiday', short: 'HOL' },
   { key: 'Half day', label: 'Half day', cls: 'shift-halfday', short: 'HD' },
@@ -3965,7 +3975,7 @@ var SHIFT_TYPES = [
 
 var SUMMARY_COLS = [
   'Morning Shift', 'Morning (7 MYT)', 'Evening Shift', 'Evening till 1 EET', 'Evening till 2 EET',
-  'Evening (15 MYT)', ' Morning (11 EEST)', 'Night Shift', 'Holiday', 'Half day', '-', 'Sick Leave'
+  'Evening (15 MYT)', 'Morning (11 EEST)', 'Night Shift', 'Holiday', 'Half day', '-', 'Sick Leave'
 ];
 
 function getShiftInfo(val) {
@@ -4328,7 +4338,7 @@ function buildDailyCoverage(data) {
     });
   });
 
-  var activeShifts = ['Morning Shift','Morning (7 MYT)','Morning (7 EEST)','Morning (8 EEST)','Evening Shift','Evening till 1 EET','Evening till 2 EET','Evening (15 MYT)',' Morning (11 EEST)','Night Shift'];
+  var activeShifts = ['Morning Shift','Morning (7 MYT)','Morning (7 EEST)','Morning (8 EEST)','Evening Shift','Evening till 1 EET','Evening till 2 EET','Evening (15 MYT)','Morning (11 EEST)','Night Shift'];
 
   var html = '<h3 style="margin-bottom:15px;color:var(--text-dim)">Daily Active Coverage (hover cells for names)</h3>';
   html += '<table class="summary-table"><thead><tr><th>Day</th><th>Date</th>';
@@ -4492,7 +4502,7 @@ document.addEventListener('keydown', function(e) {
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1774595077';
+var BUILD_TS = '1774596610';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
