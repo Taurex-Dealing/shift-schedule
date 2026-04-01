@@ -2615,8 +2615,8 @@
               null,
               null,
               "Evening (15 MYT)",
-              "Evening (15 MYT)",
-              "Evening (15 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
               null,
               null
             ]
@@ -2832,9 +2832,9 @@
             "shifts": [
               "-",
               "-",
-              "Evening (15 MYT)",
-              "Evening (15 MYT)",
-              "Evening (15 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
               null,
               null
             ]
@@ -3012,11 +3012,11 @@
           {
             "name": "Hayden Ong",
             "shifts": [
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
               null,
               null
             ]
@@ -3206,11 +3206,11 @@
           {
             "name": "Hayden Ong",
             "shifts": [
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
               null,
               null
             ]
@@ -3400,10 +3400,10 @@
           {
             "name": "Hayden Ong",
             "shifts": [
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
               null,
               null,
               null
