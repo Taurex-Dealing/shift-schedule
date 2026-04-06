@@ -2790,7 +2790,7 @@ var EMBEDDED_DATA = {
               "Morning (11 EEST)",
               "-",
               null,
-              null
+              "Evening Shift"
             ]
           },
           {
@@ -2983,7 +2983,7 @@ var EMBEDDED_DATA = {
               "Morning (11 EEST)",
               "Morning (11 EEST)",
               "Morning (11 EEST)",
-              null,
+              "Morning Shift",
               null
             ]
           },
@@ -4574,7 +4574,7 @@ document.addEventListener('keydown', function(e) {
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1775038239';
+var BUILD_TS = '1775452179';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())

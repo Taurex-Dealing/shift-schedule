@@ -2606,7 +2606,7 @@
               "Morning (11 EEST)",
               "-",
               null,
-              null
+              "Evening Shift"
             ]
           },
           {
@@ -2799,7 +2799,7 @@
               "Morning (11 EEST)",
               "Morning (11 EEST)",
               "Morning (11 EEST)",
-              null,
+              "Morning Shift",
               null
             ]
           },
