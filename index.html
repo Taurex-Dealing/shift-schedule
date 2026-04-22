@@ -3917,7 +3917,7 @@ var EMBEDDED_DATA = {
               null,
               "Evening till 1 EET",
               "Morning Shift",
-              null
+              "Evening Shift"
             ]
           },
           {
@@ -4498,7 +4498,7 @@ var EMBEDDED_DATA = {
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              null,
+              "Evening Shift",
               null
             ]
           },
@@ -4859,7 +4859,7 @@ var EMBEDDED_DATA = {
         "date": "03.05",
         "night": "Afnan",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       },
       {
         "date": "09.05",
@@ -4889,7 +4889,7 @@ var EMBEDDED_DATA = {
         "date": "23.05",
         "night": "Hayden Ong",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       },
       {
         "date": "24.05",
@@ -5331,7 +5331,7 @@ document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { clo
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1776844518';
+var BUILD_TS = '1776844959';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())

@@ -3769,7 +3769,7 @@
               null,
               "Evening till 1 EET",
               "Morning Shift",
-              null
+              "Evening Shift"
             ]
           },
           {
@@ -4350,7 +4350,7 @@
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              null,
+              "Evening Shift",
               null
             ]
           },
@@ -4711,7 +4711,7 @@
         "date": "03.05",
         "night": "Afnan",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       },
       {
         "date": "09.05",
@@ -4741,7 +4741,7 @@
         "date": "23.05",
         "night": "Hayden Ong",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       },
       {
         "date": "24.05",
