@@ -3768,7 +3768,7 @@
               null,
               null,
               "Evening till 1 EET",
-              null,
+              "Morning Shift",
               null
             ]
           },
@@ -3970,10 +3970,10 @@
             "name": "Nikolay Shumanov",
             "shifts": [
               "Morning Shift",
-              "Morning Shift",
+              "Holiday",
               "-",
-              "Morning Shift",
-              "Morning Shift",
+              "Holiday",
+              "Holiday",
               null,
               null
             ]
@@ -4157,7 +4157,7 @@
               "Evening till 1 EET",
               "Evening till 1 EET",
               null,
-              null
+              "Morning Shift"
             ]
           },
           {
@@ -4704,7 +4704,7 @@
       {
         "date": "02.05",
         "night": "Afnan",
-        "morning": "",
+        "morning": "Ognyan",
         "afternoon": ""
       },
       {
@@ -4734,7 +4734,7 @@
       {
         "date": "17.05",
         "night": "Adam Nor",
-        "morning": "",
+        "morning": "Ognyan",
         "afternoon": ""
       },
       {
