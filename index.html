@@ -5167,9 +5167,10 @@ function buildWeekendShifts() {
     document.getElementById('content').innerHTML = html;
     return;
   }
-  html += '<table class="schedule-table" style="min-width:auto;max-width:700px;">';
+  html += '<table class="schedule-table" style="min-width:500px;max-width:800px;">';
   html += '<thead><tr>';
-  html += '<th style="text-align:left;">Date</th>';
+  html += '<th>Date</th>';
+  html += '<th>Day</th>';
   html += '<th style="background:#6366f1;color:#fff;">Night</th>';
   html += '<th style="background:#3b82f6;color:#fff;">Morning</th>';
   html += '<th style="background:#f59e0b;color:#000;">Afternoon</th>';
@@ -5181,10 +5182,11 @@ function buildWeekendShifts() {
     var dt = new Date(2026, mon, day);
     var dayName = dt.toLocaleDateString('en', { weekday: 'short' });
     html += '<tr>';
-    html += '<td style="text-align:left;font-weight:600;">' + dayName + ' ' + s.date + '</td>';
-    html += '<td class="editable" onclick="openWeekendEdit(\'' + s.date + '\',\'night\')">' + (s.night || '-') + '</td>';
-    html += '<td class="editable" onclick="openWeekendEdit(\'' + s.date + '\',\'morning\')">' + (s.morning || '-') + '</td>';
-    html += '<td class="editable" onclick="openWeekendEdit(\'' + s.date + '\',\'afternoon\')">' + (s.afternoon || '-') + '</td>';
+    html += '<td>' + s.date + '</td>';
+    html += '<td>' + dayName + '</td>';
+    html += '<td class="editable" onclick="openWeekendEdit(\'' + s.date + '\',\'night\')"><span class="shift-badge shift-night">' + (s.night || '-') + '</span></td>';
+    html += '<td class="editable" onclick="openWeekendEdit(\'' + s.date + '\',\'morning\')"><span class="shift-badge shift-morning">' + (s.morning || '-') + '</span></td>';
+    html += '<td class="editable" onclick="openWeekendEdit(\'' + s.date + '\',\'afternoon\')"><span class="shift-badge shift-evening">' + (s.afternoon || '-') + '</span></td>';
     html += '</tr>';
   });
   html += '</tbody></table>';
@@ -5329,7 +5331,7 @@ document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { clo
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1776842156';
+var BUILD_TS = '1776842937';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
