@@ -4700,6 +4700,67 @@
       "Zahid",
       "Sean"
     ],
-    "weekend_shifts": []
+    "weekend_shifts": [
+      {
+        "date": "02.05",
+        "night": "Afnan",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "03.05",
+        "night": "Afnan",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "09.05",
+        "night": "Hayden Ong",
+        "morning": "Win",
+        "afternoon": ""
+      },
+      {
+        "date": "10.05",
+        "night": "Hayden Ong",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "16.05",
+        "night": "Adam Nor",
+        "morning": "",
+        "afternoon": "Win"
+      },
+      {
+        "date": "17.05",
+        "night": "Adam Nor",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "23.05",
+        "night": "Hayden Ong",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "24.05",
+        "night": "Hayden Ong",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "30.05",
+        "night": "Adam Nor",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "31.05",
+        "night": "Adam Nor",
+        "morning": "",
+        "afternoon": ""
+      }
+    ]
   }
 }
