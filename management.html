@@ -113,7 +113,8 @@
     <button class="refresh-btn" onclick="loadData(true)" title="Refresh to see others' changes">Refresh</button>
     <button class="month-btn" data-month="Feb26" onclick="switchMonth('Feb26')">Feb 2026</button>
     <button class="month-btn" data-month="Mar26" onclick="switchMonth('Mar26')">Mar 2026</button>
-    <button class="month-btn active" data-month="Apr26" onclick="switchMonth('Apr26')">Apr 2026</button>
+    <button class="month-btn" data-month="Apr26" onclick="switchMonth('Apr26')">Apr 2026</button>
+    <button class="month-btn active" data-month="May26" onclick="switchMonth('May26')">May 2026</button>
   </div>
 </div>
 
@@ -4963,7 +4964,7 @@ function normalizeData(data) {
 }
 
 var scheduleData = normalizeData(EMBEDDED_DATA);
-var currentMonth = 'Apr26';
+var currentMonth = 'May26';
 var currentTab = 'schedule';
 var editTarget = null;
 var lastSaveTime = 0;
@@ -5002,6 +5003,7 @@ function getShiftInfo(val) {
 }
 
 function getMonthInfo(monthKey) {
+  if (monthKey === 'May26') return { year: 2026, month: 4, name: 'May 2026', days: 31 };
   if (monthKey === 'Apr26') return { year: 2026, month: 3, name: 'April 2026', days: 30 };
   if (monthKey === 'Mar26') return { year: 2026, month: 2, name: 'March 2026', days: 31 };
   if (monthKey === 'Feb26') return { year: 2026, month: 1, name: 'February 2026', days: 28 };
@@ -5566,7 +5568,7 @@ document.addEventListener('keydown', function(e) {
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1776841612';
+var BUILD_TS = '1776841823';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
