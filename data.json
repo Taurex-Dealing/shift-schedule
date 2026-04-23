@@ -4228,7 +4228,7 @@
               "Morning (11 EEST)",
               "Morning (11 EEST)",
               "Morning (11 EEST)",
-              null,
+              "Morning (11 EEST)",
               null
             ]
           },
@@ -4423,7 +4423,7 @@
               "Morning (11 EEST)",
               "Morning (11 EEST)",
               null,
-              null
+              "Morning (11 EEST)"
             ]
           },
           {
@@ -4617,7 +4617,7 @@
               "Morning (11 EEST)",
               "Morning (11 EEST)",
               null,
-              null
+              "Morning (11 EEST)"
             ]
           },
           {
@@ -4728,7 +4728,7 @@
       {
         "date": "16.05",
         "night": "Adam Nor",
-        "morning": "",
+        "morning": "Adam Taylor",
         "afternoon": "Win"
       },
       {
@@ -4746,7 +4746,7 @@
       {
         "date": "24.05",
         "night": "Hayden Ong",
-        "morning": "",
+        "morning": "Adam Taylor",
         "afternoon": "Hristo"
       },
       {
@@ -4758,7 +4758,7 @@
       {
         "date": "31.05",
         "night": "Adam Nor",
-        "morning": "",
+        "morning": "Adam Taylor",
         "afternoon": ""
       }
     ]
