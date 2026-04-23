@@ -3880,7 +3880,7 @@ var EMBEDDED_DATA = {
               null,
               null,
               "Morning Shift",
-              null,
+              "Evening Shift",
               null
             ]
           },
@@ -3941,7 +3941,7 @@ var EMBEDDED_DATA = {
               null,
               "-",
               null,
-              null
+              "Morning Shift"
             ]
           },
           {
@@ -4074,8 +4074,8 @@ var EMBEDDED_DATA = {
               "-",
               "Morning Shift",
               "Morning Shift",
-              null,
-              null
+              "Evening Shift",
+              "Morning Shift"
             ]
           },
           {
@@ -4135,7 +4135,7 @@ var EMBEDDED_DATA = {
               "Evening till 1 EET",
               "Evening till 1 EET",
               null,
-              null
+              "Evening Shift"
             ]
           },
           {
@@ -4463,7 +4463,7 @@ var EMBEDDED_DATA = {
               "Morning Shift",
               "Morning Shift",
               null,
-              null
+              "Evening Shift"
             ]
           },
           {
@@ -4656,7 +4656,7 @@ var EMBEDDED_DATA = {
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              null,
+              "Morning Shift",
               null
             ]
           },
@@ -5331,7 +5331,7 @@ document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { clo
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1776934229';
+var BUILD_TS = '1776934534';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
