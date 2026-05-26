@@ -114,7 +114,8 @@
     <button class="month-btn" data-month="Feb26" onclick="switchMonth('Feb26')">Feb 2026</button>
     <button class="month-btn" data-month="Mar26" onclick="switchMonth('Mar26')">Mar 2026</button>
     <button class="month-btn" data-month="Apr26" onclick="switchMonth('Apr26')">Apr 2026</button>
-    <button class="month-btn active" data-month="May26" onclick="switchMonth('May26')">May 2026</button>
+    <button class="month-btn" data-month="May26" onclick="switchMonth('May26')">May 2026</button>
+    <button class="month-btn active" data-month="Jun26" onclick="switchMonth('Jun26')">Jun 2026</button>
   </div>
 </div>
 
@@ -4118,8 +4119,8 @@ var EMBEDDED_DATA = {
           {
             "name": "Victor",
             "shifts": [
-              "Evening Shift",
-              "Evening Shift",
+              "-",
+              "-",
               "-",
               "Evening Shift",
               "Evening Shift",
@@ -4131,7 +4132,7 @@ var EMBEDDED_DATA = {
             "name": "Stanimir",
             "shifts": [
               "Evening Shift",
-              "Morning Shift",
+              "Evening Shift",
               "-",
               "Morning Shift",
               "Morning Shift",
@@ -4363,7 +4364,7 @@ var EMBEDDED_DATA = {
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              "Morning Shift",
+              "Evening Shift",
               "Morning Shift",
               null,
               null
@@ -4375,7 +4376,7 @@ var EMBEDDED_DATA = {
               "Evening Shift",
               "Evening Shift",
               "Evening Shift",
-              "Evening Shift",
+              "Holiday",
               "Evening Shift",
               null,
               null
@@ -4499,7 +4500,7 @@ var EMBEDDED_DATA = {
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              null,
+              "Morning Shift",
               "Evening Shift"
             ]
           },
@@ -4518,7 +4519,7 @@ var EMBEDDED_DATA = {
           {
             "name": "Stanimir",
             "shifts": [
-              "Evening till 1 EET",
+              "Holiday",
               "Evening till 1 EET",
               "Evening till 1 EET",
               "Evening till 1 EET",
@@ -4554,7 +4555,7 @@ var EMBEDDED_DATA = {
           {
             "name": "Petar",
             "shifts": [
-              "Morning Shift",
+              "Evening till 2 EET",
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
@@ -4582,7 +4583,7 @@ var EMBEDDED_DATA = {
               "Evening Shift",
               "Evening Shift",
               "Evening Shift",
-              "Evening Shift",
+              "Holiday",
               null,
               null
             ]
@@ -4666,7 +4667,7 @@ var EMBEDDED_DATA = {
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              "Morning Shift",
+              "Holiday",
               null,
               null
             ]
@@ -4689,10 +4690,10 @@ var EMBEDDED_DATA = {
             "name": "Hristo",
             "shifts": [
               "-",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
               "Morning Shift",
               null
             ]
@@ -4724,13 +4725,13 @@ var EMBEDDED_DATA = {
           {
             "name": "Ognyan",
             "shifts": [
-              "-",
               "Morning Shift",
               "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
+              "Holiday",
+              "Holiday",
+              "Holiday",
               null,
-              null
+              "Evening Shift"
             ]
           },
           {
@@ -4740,7 +4741,7 @@ var EMBEDDED_DATA = {
               "Evening Shift",
               "Evening Shift",
               "Evening Shift",
-              "Evening Shift",
+              "Morning Shift",
               null,
               null
             ]
@@ -4749,10 +4750,10 @@ var EMBEDDED_DATA = {
             "name": "Petar",
             "shifts": [
               "-",
-              "Evening till 1 EET",
-              "Evening till 1 EET",
-              "Evening till 1 EET",
-              "Evening till 1 EET",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
               null,
               null
             ]
@@ -4920,12 +4921,12 @@ var EMBEDDED_DATA = {
         "date": "17.05",
         "night": "Adam Nor",
         "morning": "Ognyan",
-        "afternoon": ""
+        "afternoon": "Petar"
       },
       {
         "date": "23.05",
         "night": "Hayden Ong",
-        "morning": "",
+        "morning": "Hristo",
         "afternoon": "Ognyan"
       },
       {
@@ -4938,12 +4939,1053 @@ var EMBEDDED_DATA = {
         "date": "30.05",
         "night": "Adam Nor",
         "morning": "Hristo",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       },
       {
         "date": "31.05",
         "night": "Adam Nor",
         "morning": "Adam Taylor",
+        "afternoon": "Ognyan"
+      }
+    ]
+  },
+  "Jun26": {
+    "weeks": [
+      {
+        "week": "Week 23",
+        "dates": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "staff": [
+          {
+            "name": "Hristo",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Victor",
+            "shifts": [
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Stanimir",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Ognyan",
+            "shifts": [
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Nikolay Shumanov",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Petar",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Matthew",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Win",
+            "shifts": [
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Sarang",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Adam Taylor",
+            "shifts": [
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Adam Nor",
+            "shifts": [
+              "-",
+              "-",
+              "Evening (15 MYT)",
+              "Evening (15 MYT)",
+              "Evening (15 MYT)",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Hayden Ong",
+            "shifts": [
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)"
+            ]
+          },
+          {
+            "name": "Afnan",
+            "shifts": [
+              "-",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Zahid",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Sean",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          }
+        ]
+      },
+      {
+        "week": "Week 24",
+        "dates": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "staff": [
+          {
+            "name": "Hristo",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Victor",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Stanimir",
+            "shifts": [
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Ognyan",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Nikolay Shumanov",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Petar",
+            "shifts": [
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Matthew",
+            "shifts": [
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Win",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Sarang",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Adam Taylor",
+            "shifts": [
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Adam Nor",
+            "shifts": [
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Hayden Ong",
+            "shifts": [
+              "-",
+              "-",
+              "Evening (15 MYT)",
+              "Evening (15 MYT)",
+              "Evening (15 MYT)",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Afnan",
+            "shifts": [
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)"
+            ]
+          },
+          {
+            "name": "Zahid",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Sean",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          }
+        ]
+      },
+      {
+        "week": "Week 25",
+        "dates": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "staff": [
+          {
+            "name": "Hristo",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Victor",
+            "shifts": [
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Stanimir",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Ognyan",
+            "shifts": [
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Nikolay Shumanov",
+            "shifts": [
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Petar",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Matthew",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Win",
+            "shifts": [
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Sarang",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Adam Taylor",
+            "shifts": [
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Adam Nor",
+            "shifts": [
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "-",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)"
+            ]
+          },
+          {
+            "name": "Hayden Ong",
+            "shifts": [
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Afnan",
+            "shifts": [
+              "-",
+              "-",
+              "-",
+              "Evening (15 MYT)",
+              "Evening (15 MYT)",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Zahid",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Sean",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          }
+        ]
+      },
+      {
+        "week": "Week 26",
+        "dates": [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28
+        ],
+        "staff": [
+          {
+            "name": "Hristo",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Victor",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Stanimir",
+            "shifts": [
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Ognyan",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Nikolay Shumanov",
+            "shifts": [
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Petar",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Matthew",
+            "shifts": [
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Win",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Sarang",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Adam Taylor",
+            "shifts": [
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Adam Nor",
+            "shifts": [
+              "-",
+              "-",
+              "Evening (15 MYT)",
+              "Evening (15 MYT)",
+              "Evening (15 MYT)",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Hayden Ong",
+            "shifts": [
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Afnan",
+            "shifts": [
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)"
+            ]
+          },
+          {
+            "name": "Zahid",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Sean",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null
+            ]
+          }
+        ]
+      },
+      {
+        "week": "Week 27",
+        "dates": [
+          29,
+          30,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "staff": [
+          {
+            "name": "Hristo",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Victor",
+            "shifts": [
+              "Evening Shift",
+              "Evening Shift",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Stanimir",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Ognyan",
+            "shifts": [
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Nikolay Shumanov",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Petar",
+            "shifts": [
+              "Evening Shift",
+              "Evening Shift",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Matthew",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Win",
+            "shifts": [
+              "Evening Shift",
+              "Evening Shift",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Sarang",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Adam Taylor",
+            "shifts": [
+              "Morning (11 EEST)",
+              "Morning (11 EEST)",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Adam Nor",
+            "shifts": [
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Hayden Ong",
+            "shifts": [
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Afnan",
+            "shifts": [
+              "-",
+              "-",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Zahid",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          },
+          {
+            "name": "Sean",
+            "shifts": [
+              "Morning Shift",
+              "Morning Shift",
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          }
+        ]
+      }
+    ],
+    "staff_order": [
+      "Hristo",
+      "Victor",
+      "Stanimir",
+      "Ognyan",
+      "Nikolay Shumanov",
+      "Petar",
+      "Matthew",
+      "Win",
+      "Sarang",
+      "Adam Taylor",
+      "Adam Nor",
+      "Hayden Ong",
+      "Afnan",
+      "Zahid",
+      "Sean"
+    ],
+    "weekend_shifts": [
+      {
+        "date": "06.06",
+        "night": "Hayden Ong",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "07.06",
+        "night": "Hayden Ong",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "13.06",
+        "night": "Afnan",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "14.06",
+        "night": "Afnan",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "20.06",
+        "night": "Adam Nor",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "21.06",
+        "night": "Adam Nor",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "27.06",
+        "night": "Afnan",
+        "morning": "",
+        "afternoon": ""
+      },
+      {
+        "date": "28.06",
+        "night": "Afnan",
+        "morning": "",
         "afternoon": ""
       }
     ]
@@ -5025,7 +6067,7 @@ function normalizeData(data) {
 }
 
 var scheduleData = normalizeData(EMBEDDED_DATA);
-var currentMonth = 'May26';
+var currentMonth = 'Jun26';
 var currentTab = 'schedule';
 var editTarget = null;
 var lastSaveTime = 0;
@@ -5064,6 +6106,7 @@ function getShiftInfo(val) {
 }
 
 function getMonthInfo(monthKey) {
+  if (monthKey === 'Jun26') return { year: 2026, month: 5, name: 'June 2026', days: 30 };
   if (monthKey === 'May26') return { year: 2026, month: 4, name: 'May 2026', days: 31 };
   if (monthKey === 'Apr26') return { year: 2026, month: 3, name: 'April 2026', days: 30 };
   if (monthKey === 'Mar26') return { year: 2026, month: 2, name: 'March 2026', days: 31 };
@@ -5629,7 +6672,7 @@ document.addEventListener('keydown', function(e) {
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1776936406';
+var BUILD_TS = '1779767037';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
