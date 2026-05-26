@@ -4821,8 +4821,8 @@
               "Evening till 1 EET",
               "Evening till 1 EET",
               "Evening till 1 EET",
-              null,
-              null
+              "Evening Shift",
+              "Evening Shift"
             ]
           },
           {
@@ -5014,7 +5014,7 @@
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              "Morning Shift",
+              "Holiday",
               null,
               null
             ]
@@ -5098,7 +5098,7 @@
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
-              "Morning (7 MYT)",
+              "Holiday",
               null,
               null
             ]
@@ -5192,11 +5192,11 @@
           {
             "name": "Stanimir",
             "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
               null,
               null
             ]
@@ -5204,11 +5204,11 @@
           {
             "name": "Ognyan",
             "shifts": [
-              "Evening till 1 EET",
-              "Evening till 1 EET",
-              "Evening till 1 EET",
-              "Evening till 1 EET",
-              "Evening till 1 EET",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
               null,
               null
             ]
@@ -5288,9 +5288,9 @@
           {
             "name": "Adam Nor",
             "shifts": [
+              "Holiday",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
-              "-",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
@@ -5314,7 +5314,7 @@
             "shifts": [
               "-",
               "-",
-              "-",
+              "Evening (15 MYT)",
               "Evening (15 MYT)",
               "Evening (15 MYT)",
               null,
@@ -5398,13 +5398,13 @@
           {
             "name": "Ognyan",
             "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              null,
-              null
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Evening Shift",
+              "Evening Shift"
             ]
           },
           {
@@ -5758,13 +5758,13 @@
         "date": "06.06",
         "night": "Hayden Ong",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       },
       {
         "date": "07.06",
         "night": "Hayden Ong",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       },
       {
         "date": "13.06",
@@ -5794,13 +5794,13 @@
         "date": "27.06",
         "night": "Afnan",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       },
       {
         "date": "28.06",
         "night": "Afnan",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       }
     ]
   }

@@ -5007,8 +5007,8 @@ var EMBEDDED_DATA = {
               "Evening till 1 EET",
               "Evening till 1 EET",
               "Evening till 1 EET",
-              null,
-              null
+              "Evening Shift",
+              "Evening Shift"
             ]
           },
           {
@@ -5200,7 +5200,7 @@ var EMBEDDED_DATA = {
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              "Morning Shift",
+              "Holiday",
               null,
               null
             ]
@@ -5284,7 +5284,7 @@ var EMBEDDED_DATA = {
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
-              "Morning (7 MYT)",
+              "Holiday",
               null,
               null
             ]
@@ -5378,11 +5378,11 @@ var EMBEDDED_DATA = {
           {
             "name": "Stanimir",
             "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
+              "Evening till 1 EET",
               null,
               null
             ]
@@ -5390,11 +5390,11 @@ var EMBEDDED_DATA = {
           {
             "name": "Ognyan",
             "shifts": [
-              "Evening till 1 EET",
-              "Evening till 1 EET",
-              "Evening till 1 EET",
-              "Evening till 1 EET",
-              "Evening till 1 EET",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
               null,
               null
             ]
@@ -5474,9 +5474,9 @@ var EMBEDDED_DATA = {
           {
             "name": "Adam Nor",
             "shifts": [
+              "Holiday",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
-              "-",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
@@ -5500,7 +5500,7 @@ var EMBEDDED_DATA = {
             "shifts": [
               "-",
               "-",
-              "-",
+              "Evening (15 MYT)",
               "Evening (15 MYT)",
               "Evening (15 MYT)",
               null,
@@ -5584,13 +5584,13 @@ var EMBEDDED_DATA = {
           {
             "name": "Ognyan",
             "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              null,
-              null
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Evening Shift",
+              "Evening Shift"
             ]
           },
           {
@@ -5944,13 +5944,13 @@ var EMBEDDED_DATA = {
         "date": "06.06",
         "night": "Hayden Ong",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       },
       {
         "date": "07.06",
         "night": "Hayden Ong",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       },
       {
         "date": "13.06",
@@ -5980,13 +5980,13 @@ var EMBEDDED_DATA = {
         "date": "27.06",
         "night": "Afnan",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       },
       {
         "date": "28.06",
         "night": "Afnan",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Ognyan"
       }
     ]
   }
@@ -6672,7 +6672,7 @@ document.addEventListener('keydown', function(e) {
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1779767037';
+var BUILD_TS = '1779780361';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
