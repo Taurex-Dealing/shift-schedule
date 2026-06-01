@@ -5422,11 +5422,11 @@
           {
             "name": "Petar",
             "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
               null,
               null
             ]
