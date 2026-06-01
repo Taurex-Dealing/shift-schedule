@@ -4978,11 +4978,11 @@ var EMBEDDED_DATA = {
           {
             "name": "Victor",
             "shifts": [
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
               null,
               null
             ]
@@ -5026,11 +5026,11 @@ var EMBEDDED_DATA = {
           {
             "name": "Petar",
             "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
               null,
               null
             ]
@@ -5293,7 +5293,7 @@ var EMBEDDED_DATA = {
             "name": "Hayden Ong",
             "shifts": [
               "-",
-              "-",
+              "Evening (15 MYT)",
               "Evening (15 MYT)",
               "Evening (15 MYT)",
               "Evening (15 MYT)",
@@ -5487,7 +5487,7 @@ var EMBEDDED_DATA = {
             "name": "Hayden Ong",
             "shifts": [
               "Morning (7 MYT)",
-              "Morning (7 MYT)",
+              "-",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
@@ -5596,11 +5596,11 @@ var EMBEDDED_DATA = {
           {
             "name": "Nikolay Shumanov",
             "shifts": [
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
+              "Holiday",
               null,
               null
             ]
@@ -5943,7 +5943,7 @@ var EMBEDDED_DATA = {
       {
         "date": "06.06",
         "night": "Hayden Ong",
-        "morning": "",
+        "morning": "Adam Taylor",
         "afternoon": "Ognyan"
       },
       {
@@ -5955,37 +5955,37 @@ var EMBEDDED_DATA = {
       {
         "date": "13.06",
         "night": "Afnan",
-        "morning": "",
-        "afternoon": ""
+        "morning": "Hristo",
+        "afternoon": "Petar"
       },
       {
         "date": "14.06",
         "night": "Afnan",
-        "morning": "",
-        "afternoon": ""
+        "morning": "Hristo",
+        "afternoon": "Petar"
       },
       {
         "date": "20.06",
         "night": "Adam Nor",
-        "morning": "",
-        "afternoon": ""
+        "morning": "Hristo",
+        "afternoon": "Win"
       },
       {
         "date": "21.06",
         "night": "Adam Nor",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Petar"
       },
       {
         "date": "27.06",
         "night": "Afnan",
-        "morning": "",
+        "morning": "Win",
         "afternoon": "Ognyan"
       },
       {
         "date": "28.06",
         "night": "Afnan",
-        "morning": "",
+        "morning": "Adam Taylor",
         "afternoon": "Ognyan"
       }
     ]
@@ -6672,7 +6672,7 @@ document.addEventListener('keydown', function(e) {
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1779780361';
+var BUILD_TS = '1780291792';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
