@@ -6011,10 +6011,10 @@ var EMBEDDED_DATA = {
               null,
               null,
               "Morning Shift",
-              "Morning Shift",
+              "Holiday",
               "Morning Shift",
               null,
-              null
+              "Morning Shift"
             ]
           },
           {
@@ -6024,7 +6024,7 @@ var EMBEDDED_DATA = {
               null,
               "Evening Shift",
               "Evening Shift",
-              "Evening Shift",
+              "Morning Shift",
               null,
               null
             ]
@@ -6036,7 +6036,7 @@ var EMBEDDED_DATA = {
               null,
               "Morning Shift",
               "Morning Shift",
-              "Morning Shift",
+              "Holiday",
               null,
               null
             ]
@@ -6049,20 +6049,8 @@ var EMBEDDED_DATA = {
               "Evening till 1 EET",
               "Evening till 1 EET",
               "Evening till 1 EET",
-              null,
-              null
-            ]
-          },
-          {
-            "name": "Nikolay Shumanov",
-            "shifts": [
-              null,
-              null,
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              null,
-              null
+              "Evening Shift",
+              "Evening Shift"
             ]
           },
           {
@@ -6073,7 +6061,7 @@ var EMBEDDED_DATA = {
               "Evening Shift",
               "Evening Shift",
               "Evening Shift",
-              null,
+              "Morning Shift",
               null
             ]
           },
@@ -6226,8 +6214,8 @@ var EMBEDDED_DATA = {
           {
             "name": "Stanimir",
             "shifts": [
-              "Evening till 1 EET",
-              "Evening till 1 EET",
+              "Holiday",
+              "Holiday",
               "Evening till 1 EET",
               "Evening till 1 EET",
               "Evening till 1 EET",
@@ -6248,26 +6236,14 @@ var EMBEDDED_DATA = {
             ]
           },
           {
-            "name": "Nikolay Shumanov",
-            "shifts": [
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              null,
-              null
-            ]
-          },
-          {
             "name": "Petar",
             "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              null,
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
               null
             ]
           },
@@ -6437,18 +6413,6 @@ var EMBEDDED_DATA = {
               "Evening till 1 EET",
               "Evening till 1 EET",
               "Evening till 1 EET",
-              null,
-              null
-            ]
-          },
-          {
-            "name": "Nikolay Shumanov",
-            "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
               null,
               null
             ]
@@ -6636,18 +6600,6 @@ var EMBEDDED_DATA = {
             ]
           },
           {
-            "name": "Nikolay Shumanov",
-            "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              null,
-              null
-            ]
-          },
-          {
             "name": "Petar",
             "shifts": [
               "Evening till 1 EET",
@@ -6655,7 +6607,7 @@ var EMBEDDED_DATA = {
               "Evening till 1 EET",
               "Evening till 1 EET",
               "Evening till 1 EET",
-              null,
+              "Evening Shift",
               null
             ]
           },
@@ -6830,18 +6782,6 @@ var EMBEDDED_DATA = {
             ]
           },
           {
-            "name": "Nikolay Shumanov",
-            "shifts": [
-              "Holiday",
-              "Holiday",
-              "Holiday",
-              "Holiday",
-              "Holiday",
-              null,
-              null
-            ]
-          },
-          {
             "name": "Petar",
             "shifts": [
               "Morning Shift",
@@ -6969,7 +6909,6 @@ var EMBEDDED_DATA = {
       "Victor",
       "Stanimir",
       "Ognyan",
-      "Nikolay Shumanov",
       "Petar",
       "Matthew",
       "Win",
@@ -6985,20 +6924,20 @@ var EMBEDDED_DATA = {
       {
         "date": "04.07",
         "night": "Adam Nor",
-        "morning": "",
-        "afternoon": ""
+        "morning": "Petar",
+        "afternoon": "Ognyan"
       },
       {
         "date": "05.07",
         "night": "Adam Nor",
-        "morning": "",
-        "afternoon": ""
+        "morning": "Hristo",
+        "afternoon": "Ognyan"
       },
       {
         "date": "11.07",
         "night": "Hayden Ong",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Petar"
       },
       {
         "date": "12.07",
@@ -7022,7 +6961,7 @@ var EMBEDDED_DATA = {
         "date": "25.07",
         "night": "Adam Nor",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Petar"
       },
       {
         "date": "26.07",
@@ -7715,7 +7654,7 @@ document.addEventListener('keydown', function(e) {
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1782388402';
+var BUILD_TS = '1782810468';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())

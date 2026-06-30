@@ -5827,7 +5827,7 @@
               "Holiday",
               "Morning Shift",
               null,
-              null
+              "Morning Shift"
             ]
           },
           {
@@ -5862,20 +5862,8 @@
               "Evening till 1 EET",
               "Evening till 1 EET",
               "Evening till 1 EET",
-              null,
-              null
-            ]
-          },
-          {
-            "name": "Nikolay Shumanov",
-            "shifts": [
-              null,
-              null,
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              null,
-              null
+              "Evening Shift",
+              "Evening Shift"
             ]
           },
           {
@@ -5886,7 +5874,7 @@
               "Evening Shift",
               "Evening Shift",
               "Evening Shift",
-              null,
+              "Morning Shift",
               null
             ]
           },
@@ -6061,26 +6049,14 @@
             ]
           },
           {
-            "name": "Nikolay Shumanov",
-            "shifts": [
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              null,
-              null
-            ]
-          },
-          {
             "name": "Petar",
             "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              null,
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
               null
             ]
           },
@@ -6250,18 +6226,6 @@
               "Evening till 1 EET",
               "Evening till 1 EET",
               "Evening till 1 EET",
-              null,
-              null
-            ]
-          },
-          {
-            "name": "Nikolay Shumanov",
-            "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
               null,
               null
             ]
@@ -6449,18 +6413,6 @@
             ]
           },
           {
-            "name": "Nikolay Shumanov",
-            "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              null,
-              null
-            ]
-          },
-          {
             "name": "Petar",
             "shifts": [
               "Evening till 1 EET",
@@ -6468,7 +6420,7 @@
               "Evening till 1 EET",
               "Evening till 1 EET",
               "Evening till 1 EET",
-              null,
+              "Evening Shift",
               null
             ]
           },
@@ -6643,18 +6595,6 @@
             ]
           },
           {
-            "name": "Nikolay Shumanov",
-            "shifts": [
-              "Holiday",
-              "Holiday",
-              "Holiday",
-              "Holiday",
-              "Holiday",
-              null,
-              null
-            ]
-          },
-          {
             "name": "Petar",
             "shifts": [
               "Morning Shift",
@@ -6782,7 +6722,6 @@
       "Victor",
       "Stanimir",
       "Ognyan",
-      "Nikolay Shumanov",
       "Petar",
       "Matthew",
       "Win",
@@ -6798,20 +6737,20 @@
       {
         "date": "04.07",
         "night": "Adam Nor",
-        "morning": "",
-        "afternoon": ""
+        "morning": "Petar",
+        "afternoon": "Ognyan"
       },
       {
         "date": "05.07",
         "night": "Adam Nor",
-        "morning": "",
-        "afternoon": ""
+        "morning": "Hristo",
+        "afternoon": "Ognyan"
       },
       {
         "date": "11.07",
         "night": "Hayden Ong",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Petar"
       },
       {
         "date": "12.07",
@@ -6835,7 +6774,7 @@
         "date": "25.07",
         "night": "Adam Nor",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Petar"
       },
       {
         "date": "26.07",
