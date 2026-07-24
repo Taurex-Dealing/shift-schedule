@@ -6045,7 +6045,7 @@
               "Morning Shift",
               "Morning Shift",
               null,
-              null
+              "Evening Shift"
             ]
           },
           {
@@ -6080,7 +6080,7 @@
               "Evening Shift",
               "Evening Shift",
               "Evening Shift",
-              null,
+              "Morning Shift",
               null
             ]
           },
@@ -6226,8 +6226,8 @@
               "Evening till 1 EET",
               "Evening till 1 EET",
               "Evening till 1 EET",
-              null,
-              null
+              "Morning Shift",
+              "Evening Shift"
             ]
           },
           {
@@ -6262,8 +6262,8 @@
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              null,
-              null
+              "Evening Shift",
+              "Morning Shift"
             ]
           },
           {
@@ -6409,7 +6409,7 @@
               "Morning Shift",
               "Morning Shift",
               null,
-              null
+              "Evening Shift"
             ]
           },
           {
@@ -6445,7 +6445,7 @@
               "Evening Shift",
               "Evening Shift",
               null,
-              null
+              "Morning Shift"
             ]
           },
           {
