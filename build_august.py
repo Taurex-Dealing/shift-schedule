@@ -151,8 +151,9 @@ def patch_html(fp, data_json_str, ts):
             lambda m: m.group(1) + m.group(3) + '\n    <button class=\"month-btn active\" data-month=\"Aug26\" onclick=\"switchMonth(\'Aug26\')\">Aug 2026</button>',
             html, count=1)
         assert c == 1, f"{fp}: month button not inserted"
-    html, c = re.subn(r"var currentMonth = 'Jul26';", "var currentMonth = 'Aug26';", html)
-    assert c == 1, f"{fp}: currentMonth not updated"
+    if "var currentMonth = 'Aug26';" not in html:
+        html, c = re.subn(r"var currentMonth = 'Jul26';", "var currentMonth = 'Aug26';", html)
+        assert c == 1, f"{fp}: currentMonth not updated"
     if "monthKey === 'Aug26'" not in html:
         html, c = re.subn(
             r"(  if \(monthKey === 'Jul26'\))",

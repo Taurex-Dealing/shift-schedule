@@ -6807,7 +6807,7 @@
               "Holiday",
               "Holiday",
               null,
-              null
+              "Morning Shift"
             ]
           },
           {
@@ -7048,7 +7048,7 @@
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              "Evening Shift",
+              null,
               null
             ]
           },
@@ -7182,8 +7182,8 @@
               "Morning Shift",
               "Morning Shift",
               "Morning Shift",
-              null,
-              null
+              "Evening Shift",
+              "Morning Shift"
             ]
           },
           {
@@ -7352,8 +7352,8 @@
               "Evening Shift",
               "Evening Shift",
               "Evening Shift",
-              null,
-              null
+              "Evening Shift",
+              "Evening Shift"
             ]
           },
           {
@@ -7681,7 +7681,7 @@
         "date": "15.08",
         "night": "Adam Nor",
         "morning": "Hayden Ong",
-        "afternoon": "Win"
+        "afternoon": ""
       },
       {
         "date": "16.08",
