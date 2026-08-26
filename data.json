@@ -7991,8 +7991,8 @@
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
-              null,
-              null
+              "Morning (7 MYT)",
+              "Morning (7 MYT)"
             ]
           },
           {
@@ -8003,8 +8003,8 @@
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
-              "Morning (7 MYT)",
-              "Morning (7 MYT)"
+              null,
+              null
             ]
           },
           {
@@ -8144,18 +8144,6 @@
           {
             "name": "Adam Nor",
             "shifts": [
-              "Morning (7 MYT)",
-              "Morning (7 MYT)",
-              "Morning (7 MYT)",
-              "Morning (7 MYT)",
-              "Morning (7 MYT)",
-              "Morning (7 MYT)",
-              "Morning (7 MYT)"
-            ]
-          },
-          {
-            "name": "Afnan",
-            "shifts": [
               "-",
               "-",
               "Morning (7 MYT)",
@@ -8163,6 +8151,18 @@
               "Morning (7 MYT)",
               null,
               null
+            ]
+          },
+          {
+            "name": "Afnan",
+            "shifts": [
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)"
             ]
           },
           {
@@ -8302,8 +8302,8 @@
           {
             "name": "Adam Nor",
             "shifts": [
-              "-",
-              "-",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
@@ -8314,8 +8314,8 @@
           {
             "name": "Afnan",
             "shifts": [
-              "Morning (7 MYT)",
-              "Morning (7 MYT)",
+              "-",
+              "-",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
@@ -8537,25 +8537,25 @@
       },
       {
         "date": "12.09",
-        "night": "Afnan",
+        "night": "Adam Nor",
         "morning": "",
         "afternoon": ""
       },
       {
         "date": "13.09",
-        "night": "Afnan",
+        "night": "Adam Nor",
         "morning": "",
         "afternoon": ""
       },
       {
         "date": "19.09",
-        "night": "Adam Nor",
+        "night": "Afnan",
         "morning": "",
         "afternoon": ""
       },
       {
         "date": "20.09",
-        "night": "Adam Nor",
+        "night": "Afnan",
         "morning": "",
         "afternoon": ""
       },

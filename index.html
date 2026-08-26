@@ -8143,8 +8143,8 @@ var EMBEDDED_DATA = {
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
-              null,
-              null
+              "Morning (7 MYT)",
+              "Morning (7 MYT)"
             ]
           },
           {
@@ -8155,8 +8155,8 @@ var EMBEDDED_DATA = {
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
-              "Morning (7 MYT)",
-              "Morning (7 MYT)"
+              null,
+              null
             ]
           },
           {
@@ -8296,18 +8296,6 @@ var EMBEDDED_DATA = {
           {
             "name": "Adam Nor",
             "shifts": [
-              "Morning (7 MYT)",
-              "Morning (7 MYT)",
-              "Morning (7 MYT)",
-              "Morning (7 MYT)",
-              "Morning (7 MYT)",
-              "Morning (7 MYT)",
-              "Morning (7 MYT)"
-            ]
-          },
-          {
-            "name": "Afnan",
-            "shifts": [
               "-",
               "-",
               "Morning (7 MYT)",
@@ -8315,6 +8303,18 @@ var EMBEDDED_DATA = {
               "Morning (7 MYT)",
               null,
               null
+            ]
+          },
+          {
+            "name": "Afnan",
+            "shifts": [
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)"
             ]
           },
           {
@@ -8454,8 +8454,8 @@ var EMBEDDED_DATA = {
           {
             "name": "Adam Nor",
             "shifts": [
-              "-",
-              "-",
+              "Morning (7 MYT)",
+              "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
@@ -8466,8 +8466,8 @@ var EMBEDDED_DATA = {
           {
             "name": "Afnan",
             "shifts": [
-              "Morning (7 MYT)",
-              "Morning (7 MYT)",
+              "-",
+              "-",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
               "Morning (7 MYT)",
@@ -8689,25 +8689,25 @@ var EMBEDDED_DATA = {
       },
       {
         "date": "12.09",
-        "night": "Afnan",
+        "night": "Adam Nor",
         "morning": "",
         "afternoon": ""
       },
       {
         "date": "13.09",
-        "night": "Afnan",
+        "night": "Adam Nor",
         "morning": "",
         "afternoon": ""
       },
       {
         "date": "19.09",
-        "night": "Adam Nor",
+        "night": "Afnan",
         "morning": "",
         "afternoon": ""
       },
       {
         "date": "20.09",
-        "night": "Adam Nor",
+        "night": "Afnan",
         "morning": "",
         "afternoon": ""
       },
@@ -9149,7 +9149,7 @@ document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { clo
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1787745683';
+var BUILD_TS = '1787746080';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
