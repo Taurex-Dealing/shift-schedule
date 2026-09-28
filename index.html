@@ -8748,8 +8748,8 @@ var EMBEDDED_DATA = {
               null,
               "Morning Shift",
               "Morning Shift",
-              null,
-              null
+              "Evening Shift",
+              "Morning Shift"
             ]
           },
           {
@@ -8907,7 +8907,7 @@ var EMBEDDED_DATA = {
               "Morning Shift",
               "Morning Shift",
               null,
-              null
+              "Evening Shift"
             ]
           },
           {
@@ -9059,13 +9059,13 @@ var EMBEDDED_DATA = {
           {
             "name": "Hristo",
             "shifts": [
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
-              "Morning Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
+              "Evening Shift",
               null,
-              null
+              "Morning Shift"
             ]
           },
           {
@@ -9107,11 +9107,11 @@ var EMBEDDED_DATA = {
           {
             "name": "Petar",
             "shifts": [
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
-              "Evening Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
+              "Morning Shift",
               null,
               null
             ]
@@ -9538,12 +9538,12 @@ var EMBEDDED_DATA = {
         "date": "03.10",
         "night": "Afnan",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Hristo"
       },
       {
         "date": "04.10",
         "night": "Afnan",
-        "morning": "",
+        "morning": "Hristo",
         "afternoon": ""
       },
       {
@@ -9556,7 +9556,7 @@ var EMBEDDED_DATA = {
         "date": "11.10",
         "night": "Adam Nor",
         "morning": "",
-        "afternoon": ""
+        "afternoon": "Hristo"
       },
       {
         "date": "17.10",
@@ -9567,7 +9567,7 @@ var EMBEDDED_DATA = {
       {
         "date": "18.10",
         "night": "Afnan",
-        "morning": "",
+        "morning": "Hristo",
         "afternoon": ""
       },
       {
@@ -10015,7 +10015,7 @@ document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { clo
 setInterval(function() { loadData(); }, 30000);
 
 // Auto version check - reload page if a newer build is deployed
-var BUILD_TS = '1790600872';
+var BUILD_TS = '1790602668';
 (function() {
   if (window.location.search.indexOf('_cb=') > -1) return;
   fetch('v.txt?_=' + Date.now())
